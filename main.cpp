@@ -24,7 +24,7 @@ int main()
 {
     srandom(time(NULL));
 
-    const int amount=rand()%50;
+    const int amount=rand()%50;   /// Maximum particle types
     const int number=rand()%1250; /// Maximum particle amount
     Particle *particles[number];
 
@@ -56,7 +56,7 @@ int main()
         particles[i]->position=Vector2f(rand()%TOTALX,rand()%TOTALY);
     }
 
-    RenderWindow* window=new RenderWindow(VideoMode(TOTALX,TOTALY+38),"Hello gardas");
+    RenderWindow* window=new RenderWindow(VideoMode(TOTALX,TOTALY+38),"Particles");
 
 
     window->setFramerateLimit(60);
@@ -94,7 +94,6 @@ int main()
 
                     if(pos.x>tar.x)
                     {
-                        //cout<<particles[i]->type<<endl;
                         translate.x=-translate.x;
                     }
 
@@ -124,11 +123,10 @@ int main()
 
 
                     particles[i]->position+=translate;
-                    //cout<<particles[i]->type<<endl;
                 }
             }
 
-            CircleShape cir;//=*particles[i];
+            CircleShape cir;
             cir.setPosition(particles[i]->position);
             cir.setRadius(3);
             cir.setFillColor(particles[i]->color);
