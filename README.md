@@ -1,2 +1,2 @@
 # Particles
-A simple CPU based particle simulation.
+A simple CPU based particle simulation uses SFML and c++.
