@@ -48,7 +48,7 @@ int main()
     for(int i=0;i<number;i++) // Initialize the particles.
     {
         particles[i]=new Particle;
-        short myrand=rand() % 3;
+        short myrand=rand() % amount;
 
         particles[i]->type=myrand;
         particles[i]->color=colors[myrand];
